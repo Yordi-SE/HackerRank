@@ -1,0 +1,23 @@
+void insertionSort1(int n, int arr_count, int* arr) 
+{
+    int tmp = arr[n - 1];
+    int j = arr_count - 2;
+    for (int i = 0; i < n; i++)
+    {
+        if(arr[j] > tmp && j >= 0)
+        {
+            arr[j + 1] = arr[j];
+            for (int m = 0; m < n; m++)
+                printf("%d ", arr[m]);
+                printf("\n");
+        }
+        else
+        {
+            arr[j + 1] = tmp;
+            for (int m = 0; m < n; m++)
+                printf("%d ", arr[m]);
+            break;
+        }
+        j--;
+    }
+}
