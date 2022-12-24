@@ -1,0 +1,30 @@
+int* gradingStudents(int grades_count, int* grades, int* result_count) 
+{
+    int i, u, w, count = 0;
+    int *g = malloc(sizeof(int) * grades_count);
+    for (i = 0; i < grades_count; i++)
+    {
+            if (grades[i] % 5 == 0)
+            {
+                g[count] = grades[i];
+                count++;
+            }
+            else
+            {
+                u = grades[i] / 5;
+                w = (u * 5) + 5;
+                if (w - grades[i] < 3 && grades[i] >= 38)
+                {;
+                    g[count] = w;
+                    count++;
+                }
+                else
+                {
+                    g[count] = grades[i]; 
+                    count++;
+                }
+            }
+    }
+    *result_count = count;
+    return (g);
+}
