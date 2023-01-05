@@ -1,0 +1,16 @@
+long int cmpfunc (const void * a, const void * b) {
+   return ( *(long int *)a - *(long int *)b );
+}
+char * kthLargestNumber(char ** nums, int numsSize, int k)
+{
+    long int *d = malloc(sizeof(long int ) * numsSize);
+    char *s = malloc(sizeof(char) * 30);
+    for (int i = 0; i < numsSize; i++)
+    {
+        d[i] = (long int) atoi(nums[i]);
+    }
+    if (numsSize > 1);
+        qsort(d, numsSize, sizeof(long int), cmpfunc);
+    sprintf(s,"%ld", d[numsSize - k]);
+    return (s);
+}
