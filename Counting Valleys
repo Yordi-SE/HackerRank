@@ -1,0 +1,17 @@
+def countingValleys(steps, path):
+    # Write your code here
+    list1 = list(path)
+    x = 0
+    m = 0
+    s = 0
+    for i in path:
+        if i == 'D':
+            x -= 1
+        else:
+            x += 1
+        if x < 0:
+            s = 1
+        if x == 0 and s == 1:
+            m += 1
+            s = 0    
+    return m
